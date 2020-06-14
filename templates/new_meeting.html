@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DogTinder- Create new Meeting</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/favorites.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+<div dir="rtl" class="topnav" id="myTopnav">
+
+    {% include 'menu.html' %}
+
+</div>
+
+<div style="text-align:center">
+<br>
+<h2>Schedule a Meeting</h2>
+<br>
+<form action="/favorites/add_meeting" method="post">
+    <label for="time">Time:</label><br>
+    <input type="datetime-local" id="time" name="time">
+    <br>
+    <br>
+    <label for="place">Place:</label><br>
+    <input type="text" id="place" name="place"><br>
+    <br>
+    <label for="place">Dog ID:</label><br>
+    <input type="text" id="dog" name="dog" value="" readonly><br><br>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+</div>
+
+<script>
+var url = window.location.href;
+document.getElementById("dog").value = url.substring(url.lastIndexOf('dog=')+4);
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<a href="{{ url_for('homepage') }}"> <img id="logo" src="{{ url_for('static', filename='images/logohebrew.png') }}"></a>
+<a href="#"> <i class="fa fa-user" style="margin-left:10px;"></i> {{ session["USERNAME"] }}</a>
+<a href="{{ url_for('logout') }}" class="active">Log Out</a>
+<a href="{{ url_for('chat') }}">Chat</a>
+<a href="{{ url_for('favorites') }}">Favorites</a>
+<a href="{{ url_for('create_dog_profile') }}">Add a Dog</a>
+<a href="{{ url_for('help') }}">Help</a>
+<a href="{{ url_for('updateUser') }}">Edit Profile</a>
+<a href="{{ url_for('homepage') }}">Homepage</a>
+
+<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+</a>
+
+<script>
+    $('ul.cardlist li:first-child').addClass('current');
+ function myFunction() {
+ $('#myTopnav').toggleClass('responsive');
+ }
+</script>

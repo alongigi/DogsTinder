@@ -1,0 +1,39 @@
+{% if logged_in_user is not defined %}
+{% set logged_in_user = session["USERNAME"] %}
+{% endif %}
+
+{% for msg in messages %}
+    <div class="msg-list-item">
+    {% if msg[1] == logged_in_user %}
+        <div class="d-flex justify-content-end">
+            <div class="msg_cotainer_send">
+                <span class="msg-content">
+                    {% for msgline in msg[3].splitlines() %}
+                        {{ msgline }} <br/>
+                    {% endfor %}
+                </span>
+                <span class="msg_time_send">{{msg[4].strftime('%H:%M %d-%m-%Y')}}</span>
+            </div>
+            <div class="d-flex flex-column img_cont_msg">
+                <img src="{{ url_for('static', filename='images/user.png') }}" class="rounded-circle user_img_msg"/>
+                <span>{{msg[1]}}</span>
+            </div>
+        </div>
+    {% else %}
+        <div class="d-flex justify-content-start">
+            <div class="d-flex flex-column img_cont_msg">
+                <img src="{{ url_for('static', filename='images/user.png') }}" class="rounded-circle user_img_msg"/>
+                <span>{{msg[1]}}</span>
+            </div>
+            <div class="msg_cotainer">
+                <span class="msg-content">
+                    {% for msgline in msg[3].splitlines() %}
+                        {{ msgline }} <br/>
+                    {% endfor %}
+                </span>
+                <span class="msg_time">{{msg[4].strftime('%H:%M %d-%m-%Y')}}</span>
+            </div>
+        </div>
+    {% endif %}
+    </div>
+{% endfor %}

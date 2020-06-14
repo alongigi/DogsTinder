@@ -1,0 +1,65 @@
+*{
+			box-sizing:border-box;
+			margin:0px;
+		}
+	
+		body{background-image: url('https://www.ynet.co.il/PicServer5/2019/06/12/9303098/93030220990100980654no.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;}
+		
+		legend{font-size:20px;}
+		#f1{margin:auto; width:80%;text-align:center; color:blue; font-style:italic;}
+		.lb1{  background-color:lightblue; border-radius: 45%; display:inline-block; width:30%; text-align:center; font-size:20px; margin-top:2%;}
+		.cls{ width:30%;}
+		.submit_reset{cursor: pointer; width:20%;margin-bottom:2px;}
+		#backButton{font-size:20px; width:30%; padding:0.5%; border-radius: 50%; margin-left:34%; margin-top:3%;}
+		#enter{font-size:20px;}
+		#must{color:red; font-style:italic;}
+
+		
+		#all{ width:60%; margin:auto; margin-top:3%; }
+		#big{text-decoration:bold; color:black; font-size:60px; display:inline-block;}
+		#small{margin-top:-1%; margin-left:35%; color:black;}
+		#top{  height:50%; width:80%; margin:auto;  text-align:center; padding:10%; }
+		#down{ width:80%; margin:auto; text-align:center; margin-top:-7%; }
+		a{text-decoration:none; }
+
+
+		@media screen and (max-width: 1400px) {
+			#big{font-size:40px; }
+			#small{font-size:14px;  margin-left:40%; }
+			.submit_reset{width:25%;}
+			.lb1{width:40%;}
+			.cls{ width:40%; }
+		}	
+		
+		@media screen and (max-width: 1200px) {
+		#all{width:80%;}
+			#big{font-size:40px; }
+			#small{font-size:16px; margin-top:1%; margin-left:35%;}
+			button{width:60%;}
+		}
+
+
+		@media screen and (max-width: 800px) {
+			#all{width:90%;}
+		}	
+		
+		@media screen and (max-width: 700px) {
+			#all{width:100%;}
+			#top{width:100%;}
+			#big{font-size:35px; }
+			#small{font-size:16px;  margin-left:16%;}
+			#down{width:100%;}
+		}
+		
+		
+		@media screen and (max-width: 600px) {
+			#all{width:100%; }
+			#top{width:100%;}
+			#big{font-size:35px; }
+			#small{font-size:16px;margin-top:1%; margin-left:10%;}
+			#backButton{font-size:15px;}
+			.submit_reset{width:30%;}
+			.cls{ width:48%; }
+			#down{ margin-top:5%;}
+		}
+	

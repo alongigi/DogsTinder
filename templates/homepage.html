@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html dir="rtl">
+
+<head>
+    <meta charset="utf-8" dir="rtl">
+    <title>DogTinder</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/responsivePhotoHome.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/tinder.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/homePage.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+    <div dir="rtl" class="topnav" id="myTopnav">
+
+        {% include 'menu.html' %}
+
+    </div>
+    <form style="text-align:center" class="example" method="POST">
+        <br>
+        <div>
+            <select dir="ltr" name="gender">
+                <option></option>
+                <option value="male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <label><b> :Select gender </b> </label>
+        </div>
+
+        <br>
+        <div>
+            <select dir="ltr" name="area">
+                <option></option>
+                <option value="North">North</option>
+                <option value="Center">Center</option>
+                <option value="South">South</option>
+            </select>
+            <label><b> :Select collection area </b> </label>
+        </div>
+
+
+        <button id="searchBut" type="submit" class="btn" name="filter" value="submit" style="background-color:blue"><i
+                class="fa fa-search"></i></button>
+    </form>
+
+    <div class="container">
+        <div style=" text-align:center;">
+
+            <div id="allDetails" class="cardcontainer list">
+                <ul class="cardlist">
+                    {% for dog in dogs %}
+                    <li class="card" style="width:100%;" data-dog_id="{{ dog[0] }}">
+                        <div class="dog-details">
+                            <h2>{{ dog[1] }}, {{ dog[3] }}, {{ dog[4] }}</h2>
+
+                            <a href="/dogProfile/{{ dog[0] }}" class="btn"
+                                style="color:black; text-decoration:none; font-size:18px; font-weigh:bold">View
+                                Profile</a>
+                        </div>
+                        <br>
+                        <div class="dog-image"><img style="display:block; margin:auto; width:65%;height:auto;"
+                                src="{{ url_for('static', filename=dog[9]) }}" alt="">
+                        </div>
+                    </li>
+                    {% endfor %}
+
+
+                    <p style="color:blue; font-size:25px; margin-top:10%;">No more dogs at the moment </p>
+
+                </ul>
+                <button value="yes" class="but-yay">✔</button>
+                <button value="no" class="but-nope">X</button>
+
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <footer>
+        <div class="footer">
+            <p><b>App by MTA students<br>
+                    Hadar Anuar & Mor Biton & Amit Ifrah<br>
+                    DogsTinder©</b></p>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{{ url_for('static',filename='js/tinder.js') }}"></script>
+    <!--<script src="{{ url_for('static',filename='js/homaPage.js') }}"></script>-->
+
+    <script>
+        $('ul.cardlist li:first-child').addClass('current');
+
+        $('.cardcontainer > button').click(function () {
+            var dog_id = $('ul.cardlist li:first-child').data('dog_id');
+            var answer = $(this).val();
+            $('.cardcontainer > button').attr('disabled', true);
+            $.ajax({
+                type: 'POST',
+                url: "/favorites/add",
+                data: {
+                    dog_id: dog_id,
+                    answer: answer
+                },
+                success: function (data) {
+                    $('.cardcontainer > button').attr('disabled', false);
+                },
+            });
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>

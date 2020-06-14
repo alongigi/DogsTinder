@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <title>DogTinder- favorites</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/favorites.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+
+    <div dir="rtl" class="topnav" id="myTopnav">
+
+        {% include 'menu.html' %}
+
+    </div>
+
+    <main>
+        <ul class="ul-dogs">
+            {% for dog in dogs %}
+            <li>
+                <div id="oneDog">
+                    name: {{ dog[1] }}
+                    <br>
+                    <a class="btn goToProfile" href="/dogProfile/{{ dog[0] }}">Click here to view the profile</a>
+
+                    <img src="{{ url_for('static', filename=dog[9]) }}" width="100%" height="100%" alt="photo">
+
+                    <a class="btn goToProfile" href="/chat/{{ dog[14] }}">Send message to dog owner</a>
+
+                    <a class="btn goToProfile" href="{{ url_for('new_meeting', dog = dog[0] ) }}">Click here to schedule a meeting</a>
+
+                </div>
+            </li>
+            <br>
+            {% endfor %}
+
+        </ul>
+    </main>
+
+    <br>
+    <form method="post">
+        <button id="clearChoices" type="submit" name="clear" value="yes"> Clear my choices</button>
+    </form>
+    <br>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+</body>
+
+
+</html>

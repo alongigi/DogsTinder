@@ -1,0 +1,62 @@
+		*{
+			box-sizing:border-box;
+			margin:0px;
+		}
+	
+		body{background-image: url('https://www.ynet.co.il/PicServer5/2019/06/12/9303098/93030220990100980654no.jpg');
+		background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;}
+		
+		#all{ width:60%; margin:auto; margin-top:3%; }
+		#big{text-decoration:bold; color:black; font-size:60px; display:inline-block;}
+		#small{margin-top:-1%; margin-left:35%; color:black;}
+		#top{  height:50%; width:80%; margin:auto;  text-align:center; padding:10%; }
+		button{font-size:25px; width:50%; padding:0.5%; margin:0.5%; }
+		#down{ width:80%; margin:auto;  text-align:center; padding-top:7%; padding-bottom:10%;}
+		#already{margin-top:3%; font-size:24px;}
+		#end{margin-top:1%;font-size:18px; background-color:white;display:inline-block; width:15%;}
+		a{text-decoration:none; }
+		#logoPass{
+			height: 60;
+			width: 60;			
+		}
+
+		@media screen and (max-width: 1200px) {
+			#big{font-size:40px; }
+			#small{font-size:14px;  margin-left:40%;}
+			button{width:60%;}
+		}	
+		
+		@media screen and (max-width: 1000px) {
+		#all{width:80%;}
+			#big{font-size:40px;}
+			#small{font-size:16px; margin-top:1%; margin-left:25%;}
+			#down{padding-bottom:10%;  padding-top:10%;}
+			button{width:60%;}
+		}
+
+
+		@media screen and (max-width: 800px) {
+			#all{width:90%;}
+			#down{padding-bottom:5%;}
+			#small{margin-left:20%;}
+
+		}	
+		
+		@media screen and (max-width: 700px) {
+			#all{width:100%;}
+			#top{width:100%;}
+			button{width:50%;}
+			#big{font-size:35px;}
+			#small{font-size:16px;  margin-left:16%;}
+			#down{width:100%;}
+		}
+		
+		
+		@media screen and (max-width: 600px) {
+			#all{width:100%;}
+			button{width:40%;}
+			#top{width:100%;}
+			#big{font-size:35px;}
+			#small{font-size:16px;margin-top:1%; margin-left:10%;}
+			#down{width:100%; margin-top:10%;}
+		}

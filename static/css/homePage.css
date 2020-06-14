@@ -1,0 +1,377 @@
+
+	.topnav a:hover {
+
+  color: black;
+}
+
+body {
+    font-family: helvetica, arial, sans-serif;
+    color: black;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+	background-image: url("../images/dog.jpg");
+   background-size: cover;
+   background-position: center center; /* or 50% 50% */
+   background-repeat: no-repeat;
+    background-attachment: fixed;
+   margin:0;
+   padding:0;
+
+   width: 100%;
+   height: 100%;
+}
+
+
+.topnav {
+  background-color: #F8F8FF;
+  overflow: hidden;
+
+}
+
+#logo
+{margin-top:-15px;
+height:40px;
+margin-right: 200px;
+	  
+	  
+}
+
+.footer {
+
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: none;
+  color: white;
+  text-align: center;
+  margin:auto;
+}
+
+
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: lavender;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: none;
+  color: black;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+
+@media screen and (max-width: 1100px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 1100px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: right;
+  }
+}
+
+
+
+header,
+section,
+footer {
+    display: block;
+    padding: 0.5em 1em;
+}
+
+
+a {
+    color: lime;
+}
+
+h1 {
+    color: #f8f8f8;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+}
+
+
+
+.tinderesque .list .card {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: 1px solid transparent;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+}
+
+.tinderesque .list .current {
+    display: block;
+    z-index: 30;
+}
+
+.tinderesque .cardcontainer.yes .card {
+    -webkit-animation: none;
+    animation: none;
+}
+
+.tinderesque .cardcontainer.nope .card {
+    -webkit-animation: none;
+    animation: none;
+}
+
+.tinderesque .cardcontainer.yes .current {
+    -webkit-animation: yay 0.7s ease-out;
+    animation: yay 0.7s ease-out;
+}
+
+.tinderesque .cardcontainer.nope .current {
+    -webkit-animation: nope 0.7s ease-out;
+    animation: nope 0.7s ease-out;
+}
+
+.cardlist li {
+    z-index: 1;
+}
+
+.cardlist li:nth-child(0) {
+    z-index: 5;
+}
+
+.cardlist li:nth-child(1) {
+    z-index: 4;
+}
+
+.cardlist li:nth-child(2) {
+    z-index: 3;
+}
+
+.cardlist li:nth-child(even) {
+    transform: rotate(10deg);
+    top: 8px;
+    transition: 0.4s;
+}
+
+.cardlist li:nth-child(3n) {
+    transform: rotate(-8deg);
+    top: -8px;
+    transition: 0.4s;
+}
+
+.cardlist li:nth-child(5n) {
+    transform: rotate(7deg);
+    top: -13px;
+    transition: 0.4s;
+}
+
+.card {
+    color: #000;
+    width: 250px;
+    height: 300px;
+    transition: 0.4s;
+    padding: 5px;
+    background: #fff;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, .2);
+}
+
+.current {
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, .8);
+}
+
+.cardcontainer {
+    width: 250px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.list ul.cardlist {
+    position: relative;
+    margin: 0 0 40px 0;
+    height: 300px;
+}
+
+img {
+    display: block;
+height: 150px;
+width:200px;
+top:50px;
+}
+
+.cardcontainer button.but-nope,
+.cardcontainer button.but-yay {
+    z-index: 10;
+}
+
+.cardcontainer button.but-nope {
+    background: firebrick;
+}
+
+.cardcontainer button.but-yay {
+    background: seagreen;
+}
+
+.but-nope::after {
+    content: 'nope';
+    position: absolute;
+    top: -35px;
+    left: -150px;
+    font-size: 30px;
+    transform: rotate(-30deg);
+    background: firebrick;
+    padding: .2em .4em;
+    color: #fff;
+    display: block;
+    transition: 0.4s;
+    opacity: 0;
+}
+
+.but-nope:hover::after {
+    opacity: 1;
+    top: 100px;
+}
+
+.but-yay::after {
+    content: 'yep';
+    position: absolute;
+    top: -35px;
+    right: -150px;
+    font-size: 30px;
+    background: seagreen;
+    color: #fff;
+    padding: .2em .4em;
+    transform: rotate(30deg);
+    display: block;
+    transition: 0.4s;
+    opacity: 0;
+}
+
+.but-yay:hover::after {
+    opacity: 1;
+    top: 100px;
+}
+
+#results {
+    opacity: 0;
+    position: absolute;
+    top: -20000px;
+    transition: opacity 0.5s;
+    margin: 0;
+    padding: 0;
+}
+
+#results li {
+    margin: 0;
+    padding: 0 0 5px 5px;
+    list-style: none;
+    float: left;
+    transform: rotate(0);
+    top: 0;
+}
+
+#results.live {
+    top: 0;
+    position: relative;
+    opacity: 1;
+}
+
+.extrainfo,
+.hoverinfo {
+    opacity: 0;
+    position: absolute;
+    bottom: 1em;
+    left: .5em;
+    line-height: 1em;
+}
+
+.live .hoverinfo,
+.live. extrainfo {
+    opacity: 1;
+    position: relative;
+}
+
+.card:hover .hoverinfo {
+    color: #fff;
+    background: #000;
+    background: rgba(0, 0, 0, .7);
+    padding: .5em;
+    opacity: 1;
+    position: absolute;
+}
+
+#counter {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+margin:auto;
+  width: 20%;
+  background: #f1f1f1;
+  margin-top:5px;
+  margin-left: -10px;
+  
+}
+
+/* Style the submit button */
+form.example button {
+
+margin-right:0;
+  width: 10%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+    margin-top:5px;
+	
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+

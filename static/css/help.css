@@ -1,0 +1,169 @@
+		*{
+			box-sizing:border-box;
+			margin:0px;
+		}
+
+
+
+		a{text-decoration:none;}
+
+		
+			main{margin:auto; text-align:center;}
+			.answer{ width:35%; display:inline-block; margin:auto;font-size:20px; background-color:white;color:green;margin-top:1%; display:none;}
+			.question{margin-top:-3%; cursor: pointer; display:inline-block;  font-size:25px; font-weight:bold; background-color:lightblue; border-radius:40%;}
+			#mail{text-decoration:none;}
+
+		@media screen and (max-width: 1200px) {
+			.answer{width:40%;}
+		}
+		
+		@media screen and (max-width: 1000px) {
+
+			.answer{width:50%;}
+			.question{margin-top:-2%;}
+			#q1{margin-top:2%;}
+		}	
+		
+		@media screen and (max-width:800px) {
+			.answer{width:60%;}
+			header{margin-bottom:12%; }
+		}
+		
+		@media screen and (max-width: 650px) {
+
+			.question{margin-top:0%;}
+			.answer{width:100%;}
+			#q1{margin-top:6%;}
+
+		}
+
+		.topnav a:hover {
+
+  color: black;
+}
+
+
+
+
+
+body {
+    font-family: helvetica, arial, sans-serif;
+    color: black;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+	background-image: url("../images/dog.jpg");
+   background-size: cover;
+   background-position: center center;
+   background-repeat: no-repeat;
+    background-attachment: fixed;
+   margin:0;
+   padding:0;
+
+   width: 100%;
+   height: 100%;
+}
+
+
+.topnav {
+  background-color: #F8F8FF;
+  overflow: hidden;
+
+}
+
+#logo
+{margin-top:-15px;
+height:40px;
+margin-right: 200px;
+
+
+}
+
+.footer {
+
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: none;
+  color: white;
+  text-align: center;
+  margin:auto;
+}
+
+
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: lavender;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: none;
+  color: black;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+
+@media screen and (max-width: 1100px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 1100px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: right;
+  }
+}
+
+
+header,
+section,
+footer {
+    display: block;
+    padding: 0.5em 1em;
+}
+
+
+a {
+    color: lime;
+}
+
+h1 {
+    color: #f8f8f8;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+}
+
+
+		
+		

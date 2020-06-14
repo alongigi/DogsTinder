@@ -1,0 +1,184 @@
+<!doctype html>
+<html dir="rtl">
+
+<head>
+    <title>DogTinder- Update Profile</title>
+
+    <meta charset="utf-8" dir="rtl">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="../static/css/updateUser.css">
+    <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css"
+        integrity="sha384-vus3nQHTD+5mpDiZ4rkEPlnkcyTP+49BhJ4wJeJunw06ZAp+wzzeBPUXr42fi8If" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+    <div dir="rtl" class="topnav" id="myTopnav">
+        {% include 'menu.html' %}
+    </div>
+
+    <br>
+
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body bg-transparent">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>Your Profile Details</h4>
+                                <h5> {{m}}</h5>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form method="POST" action="" enctype="multipart/form-data">
+                                    <div class="form-group row">
+                                        <div class="col-8">
+                                            <input id="username" name="username" dir="ltr" class="form-control here" type="text"
+                                                placeholder="{{ user[0][0] }}" disabled>
+                                        </div>
+                                        <label for="username" class="col-4 col-form-label">:User Name</label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-8">
+                                            <input id="name" name="name" dir="ltr" class="form-control here"
+                                                placeholder="{{ user[0][2] }}" type="text">
+                                        </div>
+                                        <label for="name" class="col-4 col-form-label">:First Name</label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-8">
+                                            <input id="lastname" name="lastname" dir="ltr" class="form-control here"
+                                                placeholder="{{ user[0][3] }}" type="text">
+                                        </div>
+                                        <label for="lastname" class="col-4 col-form-label">:Last Name</label>
+                                    </div>
+
+
+                                    <div class="form-group row">
+                                        <div class="col-8">
+                                            <input id="website" name="tel" dir="ltr" class="form-control here" type="text"
+                                                placeholder="{{ user[0][4] }}">
+                                        </div>
+                                         <label for="phone" class="col-4 col-form-label">:Phone Number</label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-8">
+                                            <input id="newpass" name="mail" dir="ltr" class="form-control here" type="text"
+                                                placeholder="{{ user[0][5] }}">
+                                        </div>
+                                        <label for="mail" class="col-4 col-form-label">:Email Address</label>
+                                    </div>
+
+
+                                    <div class="form-group row">
+                                        <div class="col-8">
+                                            <input id="newpass" name="newpass" dir="ltr" class="form-control here"
+                                                type="password">
+                                        </div>
+                                        <label for="newpass" class="col-4 col-form-label">:New Password</label>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-8">
+                                            <input id="newpass" name="confirm" dir="ltr" class="form-control here"
+                                                type="password">
+                                        </div>
+                                        <label for="renewpass" class="col-4 col-form-label">:Confirm Password</label>
+                                    </div>
+                                    <label class="col-md-5 control-label"></label>
+                                    <input type="submit" class="btn btn-primary" value="Save Changes">
+                                    <span></span>
+                                    <input type="reset" class="btn btn-light" value="Clear">
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body bg-transparent">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>Your Dogs</h4>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div class="form-group row">
+                                    <div class="list-group borderless bg-transparent">
+                                        {% for dog in dogs %}
+                                        <form method="POST" action="/updateUser/{{ dog[0] }}">
+                                            <a href="/dogProfile/{{ dog[0] }}" style="display:inline" href="#"
+                                                class="">{{ dog[1] }}</a>
+                                            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                                            <button style="float:left;margin-right:2px;" type="submit"
+                                                class="btn btn-danger" value="1" name="delete">Delete</button>
+                                            <button style="float:left" type="submit" class="btn btn-success" value="1"
+                                                name="adopt">adopted</button>
+                                        </form>
+                                        <br>
+                                        {% endfor %}
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <footer class="container">
+                <div class="footer row">
+                    <div class="col-sm-12">
+                        <p><b>App by MTA students<br>
+                                Hadar Anuar & Mor Biton & Amit Ifrah<br>
+                                DogsTinder©<b></p>
+                    </div>
+
+                </div>
+            </footer>
+
+            <script>
+                function myFunction() {
+                    var x = document.getElementById("myTopnav");
+                    if (x.className === "topnav") {
+                        x.className += " responsive";
+                    } else {
+                        x.className = "topnav";
+                    }
+                }
+
+
+
+
+            </script>
+
+
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+                integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.rtlcss.com/bootstrap/v4.2.1/js/bootstrap.min.js"
+                integrity="sha384-a9xOd0rz8w0J8zqj1qJic7GPFfyMfoiuDjC9rqXlVOcGO/dmRqzMn34gZYDTel8k"
+                crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TinderDog</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css') }}">
+
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="all">
+
+        <div id="top">
+            <img id="logoPass" src="{{ url_for('static', filename='images/logo_pasim.png') }}" alt="logo" height="60"
+                width="60">
+            <p id="big"> <b>DogTinder</b></p>
+            <p id="small"> <b>Swipe.Match.Adopt</b></p>
+        </div>
+
+        <div id="down">
+            <button id="buttonText" type="button"><a href="{{url_for('register') }}"> Register</a></button><br>
+
+            <p id="already"><b>You already have a user?</b></p>
+            <br>
+            <p id="end"><a href="{{url_for('login') }}"><b> Login</b></a></p>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

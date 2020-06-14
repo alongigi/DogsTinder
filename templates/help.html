@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TinderDog- help</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/help.css') }}">
+
+    <script defer src="{{ url_for('static',filename='js/help.js') }}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+</head>
+<body>
+
+<div dir="rtl" class="topnav" id="myTopnav">
+
+    {% include 'menu.html' %}
+
+</div>
+<br><br>
+
+<main style="width:100%;">
+    <p class="question" id="q1"><img src="{{ url_for('static', filename='images/plus.png') }}" alt="logo" height="20"
+                                     width="20"> How to create a dog profile? </p>
+    <br>
+    <p class="answer" id="a1"><b> At the top of the page, in the main menu select "Add a dog". Make sure to fill in all
+        of the dog's details and then click "Create Profile". At this point your profile is created.</b>
+    <p>
+
+        <br>
+    <p class="question" id="q2"><img src="{{ url_for('static', filename='images/plus.png') }}" alt="logo" height="20"
+                                     width="20"> contact us </p>
+    <br>
+
+    <p class="answer" id="a2"><b> Please feel free to call us at 03-5024540 <br> or send us an email at <br> <a
+            id="mail" href="mailto:dogstinder1@gmail.com"> DogsTinder@gmail.com </a> with any questions or comments you might
+        have. </b></p>
+    <br>
+
+
+    <p class="question" id="q3"><img src="{{ url_for('static', filename='images/plus.png') }}" alt="logo" height="20"
+                                     width="20"> Terms and Privacy Policy </p>
+    <br>
+
+    <p class="answer" id="a3"><b>
+        - We will not share or publish any personal details concerning you or your dogs with exception to the
+        information that you have submitted on our app.<br>- Additionally we will not share your information with other
+        third party vendors.
+        <br>** The company does reserve the right at any time to change or update its terms and privacy policy.**
+    </b></p>
+    <br>
+
+    <p class="question" id="q4"><img src="{{ url_for('static', filename='images/plus.png') }}" alt="logo" height="20"
+                                     width="20"> App information </p>
+    <br>
+
+    <p class="answer" id="a4"><b> Hadar Anuar, Amit Ifrach and Mor Bitton are the creators of this application. Our
+        application serves as an intermediary ensuring the perfect fit between the dog and his/her new prospective
+        owner. Save a life, get a friend, and swipe to adopt today! ❤🐶
+    </b>
+
+</main>
+<br>
+<br>
+
+
+	</body>
+</html>

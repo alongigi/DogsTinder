@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TinderDog- register</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/register.css') }}">
+
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="all">
+
+        <div id="top">
+            <img id="logoPass" src="{{ url_for('static', filename='images/logo_pasim.png') }}" alt="logo" height="60"
+                width="60">
+            <p id="big"> <b>DogTinder</b></p>
+            <p id="small"> <b>Swipe.Match.Adopt</b></p>
+        </div>
+
+        <div id="down">
+            <form id="form2" method="POST" action="">
+
+                <fieldset id="f1">
+                    <h2>{{ message }}</h2>
+                    <legend> Fill Your Details </legend>
+
+                    <div>
+                        <label class="lb1"> *First Name: </label>
+                        <input class="cls" dir="ltr" type="text" name="firstName" autofocus required>
+                    </div>
+
+                    <div>
+                        <label class="lb1"> *Last Name: </label>
+                        <input class="cls" dir="ltr" type="text" name="lastName" autofocus required>
+                    </div>
+
+                    <div>
+                        <label class="lb1"> *User Name: </label>
+                        <input class="cls" dir="ltr" type="text" name="username" autofocus required>
+                    </div>
+
+                    <div>
+                        <label class="lb1"> *Password: </label>
+                        <input class="cls" dir="ltr" type="password" name="password1" required>
+                    </div>
+
+                    <div>
+                        <label class="lb1"> *Confirm Password: </label>
+                        <input class="cls" dir="ltr" type="password" name="password2" required>
+                    </div>
+
+                    <div>
+                        <label class="lb1"> *Phone Number: </label>
+                        <input class="cls" dir="ltr" type="tel" name="phone" required>
+                    </div>
+
+                    <div>
+                        <label class="lb1"> *Email Address: </label>
+                        <input class="cls" dir="ltr" type="email" name="email" required>
+                    </div>
+
+                    <br>
+
+                    <p><b>*Required field</b></p>
+                    <br>
+
+                    <input class="submit_reset" type="reset" value="Clear fields">
+                    <input class="submit_reset" type="submit" value="Sign up">
+
+
+                </fieldset>
+            </form>
+
+        </div>
+
+        <button id="backButton" type="button"><a href="{{url_for('index') }}">Back</a></button><br>
+
+    </div>
+
+</body>
+</html>

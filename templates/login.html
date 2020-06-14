@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TinderDog- login</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/login.css') }}">
+
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="all">
+
+        <div id="top">
+            <img id="logoPass" src="{{ url_for('static', filename='images/logo_pasim.png') }}" alt="logo" height="60"
+                width="60">
+            <p id="big"> <b>DogTinder</b></p>
+            <p id="small"> <b>Swipe.Match.Adopt</b></p>
+        </div>
+
+        <div id="down">
+            <form id="form1" method="POST" action="">
+
+                <fieldset id="f1">
+                    {{ message }}
+                    <legend> Enter Login Details </legend>
+
+                    <div>
+                        <input class="cls" dir="ltr" type="text" name="username" autofocus required>
+                        <label class="lb1"> :User Name* </label>
+
+                    </div>
+                    <br>
+                    <div>
+                        <input class="cls" dir="ltr" type="password" name="password" required>
+                        <label class="lb1"> :Password* </label>
+
+                    </div>
+                    <br>
+
+                    <p id="must"><b>Required field*</b></p>
+                    <br>
+                    <input class="submit_reset" type="reset" value="Clear fields">
+                    <input class="submit_reset" type="submit" value="Enter">
+
+
+                </fieldset>
+            </form>
+        </div>
+
+        <button id="backButton" type="button"><a href="{{url_for('index') }}">Back</a></button><br>
+
+    </div>
+
+
+</body>
+
+</html>
